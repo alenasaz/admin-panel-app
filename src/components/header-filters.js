@@ -1,3 +1,4 @@
+import HeaderFilterButton from "./header-filters-button";
 import "./header-filters.css";
 
 const HeaderFilters = () => {
@@ -25,18 +26,7 @@ const HeaderFilters = () => {
     </div>
   </div>
 
-  <button className="button button__big-colored">
-    <svg
-      className="button__icon"
-      viewBox="0 0 16 16"
-      fill="#fff"
-      stroke="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M12 4H4V5.5L7 8.5V12L9 13V8.5L12 5.5V4Z" stroke="none" />
-    </svg>
-    <div className="button__text">Фильтры</div>
-  </button>
+<HeaderFilterButton></HeaderFilterButton>
 
   <button className="button button__big-empty">
     <div className="button__text button__text-black">Сбросить фильтры</div>

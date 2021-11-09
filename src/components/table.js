@@ -1,3 +1,4 @@
+import TableCheckbox from "./table-checkbox";
 import "./table.css";
 
 const Table = () => {
@@ -6,18 +7,7 @@ const Table = () => {
       <table className="table">
         <tr className="table__header-item">
           <th>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </th>
           <th>#</th>
           <th>Дата</th>
@@ -28,18 +18,7 @@ const Table = () => {
         </tr>
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>1270989</td>
           <td>15.02.2021, 18:00</td>
@@ -61,18 +40,7 @@ const Table = () => {
         </tr>
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>2353474</td>
           <td>12.03.2021, 05:15</td>
@@ -94,18 +62,7 @@ const Table = () => {
         </tr>
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>1103397</td>
           <td>03.02.2021, 08:04</td>
@@ -128,18 +85,7 @@ const Table = () => {
         </tr>
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>6924662</td>
           <td>21.01.2021, 13:32</td>
@@ -166,18 +112,7 @@ const Table = () => {
         </tr>
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>2200086</td>
           <td>19.01.2021, 10:28</td>
@@ -204,18 +139,7 @@ const Table = () => {
 
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>2842064</td>
           <td>04.01.2021, 12:12</td>
@@ -239,18 +163,7 @@ const Table = () => {
 
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>1730071</td>
           <td>17.12.2020, 22:45</td>
@@ -278,18 +191,7 @@ const Table = () => {
 
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>7987376</td>
           <td>07.12.2020, 08:57</td>
@@ -317,18 +219,7 @@ const Table = () => {
 
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>1373265</td>
           <td>15.11.2020, 14:26</td>
@@ -356,18 +247,7 @@ const Table = () => {
 
         <tr className="table__cell-item">
           <td>
-            <input className="dropdown__input" type="checkbox" />
-            <svg
-              className="dropdown__item-img"
-              viewBox="0 0 16 16"
-              fill="#FFF"
-              stroke="none"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
+          <TableCheckbox></TableCheckbox>
           </td>
           <td>1311100</td>
           <td>07.11.2020, 18:52</td>
