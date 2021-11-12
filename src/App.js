@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/header';
-import Table from './components/table';
+import DisplayTable from './components/table';
 import Footer from './components/footer';
 import HeaderFilters from './components/header-filters';
 import Filters from './components/filters';
@@ -11,7 +11,7 @@ function App() {
     <Header/>
     <HeaderFilters/>
     <Filters/>
-    <Table/>
+    <DisplayTable/>
     <Footer/>
     </div>
   );
