@@ -1,5 +1,6 @@
-import FilterDropdown from "./filter-dropdown";
-import "./filters.css";
+import FilterDropdown from "../FilterDropdown/FilterDropdown";
+import { Button } from "../Button/Button";
+import "./Filters.css";
 
 const Filters = () => {
   return (
@@ -65,7 +66,9 @@ const Filters = () => {
               </button>
             </div>
           </label>
-           <FilterDropdown></FilterDropdown>
+
+           <FilterDropdown/>
+
           <label className="filter__input-group">
             <span className="filter__input-title">Сумма заказа</span>
             <div
@@ -111,9 +114,7 @@ const Filters = () => {
               ></svg>
             </button>
           </div>
-          <button className="button button__big-empty">
-            <div className="button__text button__text-black">Применить</div>
-          </button>
+          <Button className="button button__big-empty" buttonText="Применить" /> 
         </div>
       </div>
   ) }

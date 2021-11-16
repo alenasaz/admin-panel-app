@@ -1,0 +1,53 @@
+.table__item-icon {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    fill: var(--background-icon-orange);
+    opacity: 0;
+    transition: opacity 0.25s ease-in;
+    align-items: flex-start;
+  }
+  
+  .table__header-icon_orange {
+    position: relative;
+    opacity: 1;
+    margin-right: 0.5rem;
+    fill: var(--background-icon-orange);
+  }
+  
+  .table__header-icon_blue {
+    position: relative;
+    opacity: 1;
+    margin-right: 0.5rem;
+    fill: var(--background-dropdowns-blue);
+  }
+  
+  .table__header-icon_green {
+    position: relative;
+    opacity: 1;
+    margin-right: 0.5rem;
+    fill: var(--background-icon-green);
+  }
+  
+  .table__header-item-text_green {
+    color: var(--background-icon-green);
+  }
+  
+  .table__header-icon_black {
+    position: relative;
+    opacity: 1;
+    margin-right: 0.5rem;
+    stroke: var(--color-black);
+    opacity: 0.5;
+  }
+  
+  .table__header-item-text_grey {
+    opacity: 0.5;
+  }
+  
+  .table__header-icon_gray {
+    position: relative;
+    opacity: 1;
+    margin-right: 0.5rem;
+    fill: var(--background-admin-panel-gray);
+  }

@@ -1,4 +1,4 @@
-import "./footer-paginaton.css"
+import "./FooterPagination.css"
 
 const FooterPagination= () => {
   return (

@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './components/header';
-import DisplayTable from './components/table';
-import Footer from './components/footer';
-import HeaderFilters from './components/header-filters';
-import Filters from './components/filters';
+import Header from './components/Header/Header';
+import Table from './components/Table/Table';
+import Footer from './components/Footer/Footer';
+import HeaderFilters from './components/HeaderFilters/HeaderFilters';
+import Filters from './components/Filters/Filters';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
     <Header/>
     <HeaderFilters/>
     <Filters/>
-    <DisplayTable/>
+    <Table/>
     <Footer/>
     </div>
   );

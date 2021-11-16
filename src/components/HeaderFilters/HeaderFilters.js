@@ -1,5 +1,6 @@
-import HeaderFilterButton from "./header-filters-button";
-import "./header-filters.css";
+import { Button } from "../Button/Button";
+import ButtonIcon from "../ButtonIcon/ButtonIcon";
+import './HeaderFilters.css';
 
 const HeaderFilters = () => {
   return (
@@ -26,11 +27,15 @@ const HeaderFilters = () => {
     </div>
   </div>
 
-<HeaderFilterButton></HeaderFilterButton>
+  <ButtonIcon
+    classNameB="button button__big-colored"
+    buttonText="Фильтры"
+    svgName="filter"
+  />
 
-  <button className="button button__big-empty">
-    <div className="button__text button__text-black">Сбросить фильтры</div>
-  </button>
+
+<Button className="button button__big-empty" buttonText="Сбросить фильтры" />
+
 </div>
 <div className="filter__loader">
   <svg

@@ -1,11 +1,13 @@
-import "./table.css";
+import './TableCheckbox.css';
 
 const TableCheckbox = () => {
   return (
-      <div>
-      <input className="dropdown__input" type="checkbox" />
+      
+      <label  className="dropdown__label">
+      <div className="checkbox-group">
+      <input className="table__input" type="checkbox" />
       <svg
-        className="dropdown__item-img"
+        className="table__item-img"
         viewBox="0 0 16 16"
         fill="#FFF"
         stroke="none"
@@ -15,6 +17,8 @@ const TableCheckbox = () => {
           stroke="none"
         />
       </svg>
+     
       </div>
+      </label>
   )}
 export default TableCheckbox;

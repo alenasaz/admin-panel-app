@@ -1,4 +1,4 @@
-import './footer-dropdown.css';
+import './FooterDropdown.css'
 
 const FooterDropdown = () => {
   return (
