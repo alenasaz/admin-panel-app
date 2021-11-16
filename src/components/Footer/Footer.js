@@ -1,9 +1,11 @@
+import { useState } from "react";
 import "./Footer.css";
 import FooterDropdown from "../FooterDropdown/FooterDropdown.js";
 import FooterPagination from "../FooterPagination/FooterPagination.js";
 import ButtonIcon from "../ButtonIcon/ButtonIcon";
 
 const Footer = () => {
+  const [IsActive, setIsActive] = useState(true);
   return (
     <div className="table__footer">
       <form className="table__footer-action">
@@ -18,9 +20,11 @@ const Footer = () => {
           classNameB="table__footer-button table__footer-button_red"
           buttonText="Удалить"
           svgName="delete"
+          onClick={(e)=> setIsActive(!IsActive)}
         />
       </form>
-      <FooterDropdown></FooterDropdown>
+      { IsActive && ( <FooterDropdown /> )
+      }
       <FooterPagination></FooterPagination>
     </div>
   );

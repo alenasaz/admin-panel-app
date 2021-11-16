@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    /* opacity: 0; */
     left: 19.25rem;
     top: -6.75rem;
     width: 10rem;
@@ -18,9 +18,9 @@
       0 0.125rem 0.125rem var(--background-dropdowns-shadow);
       cursor: pointer;
   }
-  .table__footer-dropdown:hover {
+  /* .table__footer-dropdown:hover {
     opacity: 1;
-  }
+  } */
 
   .dropdown__item-label {
     display: flex;

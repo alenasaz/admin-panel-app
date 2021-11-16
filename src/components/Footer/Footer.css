@@ -1,0 +1,11 @@
+.table__footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: var(--background-admin-panel-day-light);
+  }
