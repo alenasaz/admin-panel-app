@@ -13,11 +13,11 @@ const classStatus = {
 };
 
 
-function Table({productsList}) {
+function Table({productsList, FilterDate}) {
 
-  console.log("redux", productsList);
+  console.log("redux", FilterDate);
 
-  const DisplayData = productsList.map((info) => {
+  const DisplayData = productsList.filter((info)=>info.date.includes(FilterDate)).map((info) => {
     return (
       <tr className="table__cell-item">
         <TableCheckbox/>
@@ -33,6 +33,7 @@ function Table({productsList}) {
       </tr>
     );
   });
+  // DisplayData = DisplayData.filter((product)=>product.date.includes(FilterDate))
   
 
   return (
@@ -49,6 +50,7 @@ function Table({productsList}) {
           <th>Сумма</th>
           <th>ФИО покупателя</th>
         </tr>
+        
         {DisplayData}
       </table>
     </div>
@@ -58,7 +60,10 @@ function Table({productsList}) {
 const mapStateToProps = function(state) {
   return {
     productsList: state.productListReducer.productsList,
+    FilterDate: state.filterReducer.FilterDate
   }
 }
 
 export default connect(mapStateToProps)(Table);
+
+//{}

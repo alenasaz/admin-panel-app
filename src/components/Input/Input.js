@@ -31,6 +31,7 @@ const Input = ({
           className={className}
           placeholder={placeholder}
           value={defaultValue}
+          onChange={onChange}
         />
         <button className="filter__input-button" onClick={onClick}>
           <svg

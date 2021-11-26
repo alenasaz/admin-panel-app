@@ -1,59 +1,69 @@
 import { Button } from "../Button/Button";
 import ButtonIcon from "../ButtonIcon/ButtonIcon";
 import Input from "../Input/Input";
-import './HeaderFilters.css';
+import "./HeaderFilters.css";
+// import { store } from "../../data";
+// import store from "../../data/store";
+import { actions } from "../../data";
+import { store } from "../../data";
+// import actions from '../../data/actions';
 
 const HeaderFilters = () => {
   return (
-    
-<div className="filters__wrapper">
-<div className="filters__searchbar">
+    <div className="filters__wrapper">
+      <div className="filters__searchbar">
+        <Input
+          title=""
+          placeholder="Номер заказа или ФИО"
+          // defaultValue="до"
+          svgName="header"
+          onChange={(event) => {
+            store.dispatch(
+              actions.productsFilterSetDateAcion(event.currentTarget.value)
+            );
+          }}
+          //className="filter__input-area"
+          className="filter__input-area"
+          classNameDiv="filter__input-field_long"
+        ></Input>
 
-<Input           title=""
-placeholder="Номер заказа или ФИО"
-// defaultValue="до"
-svgName="header"
-//className="filter__input-area"
-className="filter__input-area"
-classNameDiv='filter__input-field_long'
-></Input>
+        <ButtonIcon
+          classNameB="button button__big-colored"
+          buttonText="Фильтры"
+          svgName="filter"
+        />
 
-
-  <ButtonIcon
-    classNameB="button button__big-colored"
-    buttonText="Фильтры"
-    svgName="filter"
-  />
-
-
-<Button className="button button__big-empty" buttonText="Сбросить фильтры" />
-
-</div>
-<div className="filter__loader">
-  <svg
-    className="filter__loader-icon"
-    viewBox="0 0 16 16"
-    fill="none"
-    stroke="#8055FF"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M2.50251 7.5V8.5C2.50251 10.75 4.75251 13.5 8.00251 13.5C10 13.5 11.6187 12.5 12.6 11"
-      fill="none"
-    />
-    <path
-      d="M13.5 8.5V7.5C13.5 5.25 11.25 2.5 7.99997 2.5C6 2.5 4.38135 3.5 3.4 5"
-      fill="none"
-    />
-    <path d="M4.5 9.5L2.50254 7.5L0.752533 9.75" fill="none" />
-    <path d="M11.5 6.5L13.5 8.5L15.25 6.25" fill="none" />
-  </svg>
-  <span className="filter__loader-text">Загрузка</span>
-</div>
-</div> ) }
+        <Button
+          className="button button__big-empty"
+          buttonText="Сбросить фильтры"
+        />
+      </div>
+      <div className="filter__loader">
+        <svg
+          className="filter__loader-icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="#8055FF"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2.50251 7.5V8.5C2.50251 10.75 4.75251 13.5 8.00251 13.5C10 13.5 11.6187 12.5 12.6 11"
+            fill="none"
+          />
+          <path
+            d="M13.5 8.5V7.5C13.5 5.25 11.25 2.5 7.99997 2.5C6 2.5 4.38135 3.5 3.4 5"
+            fill="none"
+          />
+          <path d="M4.5 9.5L2.50254 7.5L0.752533 9.75" fill="none" />
+          <path d="M11.5 6.5L13.5 8.5L15.25 6.25" fill="none" />
+        </svg>
+        <span className="filter__loader-text">Загрузка</span>
+      </div>
+    </div>
+  );
+};
 
 export default HeaderFilters;
-
 
 // <div className="searchbar__input-items">
 // <input
