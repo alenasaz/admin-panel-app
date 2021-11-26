@@ -1,7 +1,8 @@
 import TableCheckbox from "../Checkbox/TableCheckbox";
 import "./Table.css";
-import products from "../../data/list";
+// import products from "../../data/list";
 import { StatusIcon } from "../Icons/StatusIcon";
+import { connect } from "react-redux";
 
 const classStatus = {
   Новый: "table__header-item-text",
@@ -11,24 +12,28 @@ const classStatus = {
   Отложен: "table__header-item-text",
 };
 
-const DisplayData = products.map((info) => {
-  return (
-    <tr className="table__cell-item">
-      <TableCheckbox/>
-      <td>{info.id}</td>
-      <td>{info.date}</td>
-      <td className="table__item">
-      <StatusIcon status={info.status}/>
-        <span className={classStatus[info.status]}>{info.status}</span>
-      </td>
-      <td>{info.position}</td>
-      <td>{info.sum}</td>
-      <td>{info.fullName}</td>
-    </tr>
-  );
-});
 
-function Table() {
+function Table({productsList}) {
+
+  console.log("redux", productsList);
+
+  const DisplayData = productsList.map((info) => {
+    return (
+      <tr className="table__cell-item">
+        <TableCheckbox/>
+        <td>{info.id}</td>
+        <td>{info.date}</td>
+        <td className="table__item">
+        <StatusIcon status={info.status}/>
+          <span className={classStatus[info.status]}>{info.status}</span>
+        </td>
+        <td>{info.position}</td>
+        <td>{info.sum}</td>
+        <td>{info.fullName}</td>
+      </tr>
+    );
+  });
+  
 
   return (
     <div className="table__body">
@@ -50,4 +55,10 @@ function Table() {
   );
 }
 
-export default Table;
+const mapStateToProps = function(state) {
+  return {
+    productsList: state.productListReducer.productsList,
+  }
+}
+
+export default connect(mapStateToProps)(Table);
