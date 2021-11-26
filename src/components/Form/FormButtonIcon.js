@@ -1,6 +1,6 @@
-import { ButtonIconClass, ButtonIconData } from "./ButtonIconData";
+import { FormButtonIconClass, FormButtonIconData } from "./FormButtonIconData"
 
-const ButtonIcon = ({
+const FormButtonIcon = ({
   classNameB,
   buttonText,
   svgName,
@@ -10,8 +10,8 @@ const ButtonIcon = ({
   stroke = "none",
   xmlns = "http://www.w3.org/2000/svg",
 }) => {
-    const { path, circle } = ButtonIconData[svgName];
-    const { className } = ButtonIconClass[svgName];
+    const { path, circle } = FormButtonIconData[svgName];
+    const { className } = FormButtonIconClass[svgName];
   return (
     <button className={classNameB} onClick={onClick} >
       <svg
@@ -28,4 +28,4 @@ const ButtonIcon = ({
   );
 };
 
-export default ButtonIcon;
+export default FormButtonIcon;

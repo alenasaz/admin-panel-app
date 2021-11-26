@@ -11,6 +11,10 @@ export const ButtonIconClass = {
   theme: {
       className: "page-header__icon"
   },
+  save: 
+  {
+    className: "button__icon",
+  }
 };
 
 export const ButtonIconData = {
@@ -40,7 +44,11 @@ export const ButtonIconData = {
   theme: {
     circle: <circle cx="8" cy="8" r="4" stroke="none" />,
     path: '<path d="M15 9L16 8L15 7H13V9H15Z" stroke="none" /> <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none" /> <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none" /> <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none" /> <path d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z" stroke="none" /> <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none" /> <path d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z" stroke="none" /> <path d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z" stroke="none" />'
-  }
+  },
+  save: { 
+    circle: "",
+    path: <path d="M12 4H4V5.5L7 8.5V12L9 13V8.5L12 5.5V4Z" stroke="none" />
+  },
 };
 
 
