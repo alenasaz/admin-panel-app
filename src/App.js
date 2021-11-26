@@ -9,17 +9,15 @@ import { Form } from './components/Form/Form';
 function App() {
   return (
     <div className="App">
-
-    <Form/>
+    <Header/>
+    <HeaderFilters/>
+    <Filters/>
+    <Table/>
+    <Footer/>
     </div>
   );
 }
 
 export default App;
 
-
-    // <Header/>
-    // <HeaderFilters/>
-    // <Filters/>
-    // <Table/>
-    // <Footer/>
+//<Form/>
