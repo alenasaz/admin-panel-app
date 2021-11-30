@@ -3,6 +3,8 @@ import { Button } from "../Button/Button";
 import { useState } from "react";
 import "./Filters.css";
 import Input from "../Input/Input";
+import { actions } from "../../data";
+import { store } from "../../data";
 
 const Filters = () => {
   const [IsActive, setIsActive] = useState(false);
@@ -12,9 +14,14 @@ const Filters = () => {
         <Input
           title="Дата оформления"
           placeholder="dd.mm.dddd"
-          defaultValue="20.01.2021"
+          //defaultValue="20.01.2021"
           svgName="filter"
           className="filter__input-area"
+          onChange={(event) => {
+            store.dispatch(
+              actions.productsFilterSetDateAcion(event.currentTarget.value)
+            );
+          }}
         ></Input>
 
         <Input
@@ -34,6 +41,7 @@ const Filters = () => {
           svgName="dropdown"
           className="filter__input-area"
           onClick={(e) => setIsActive(!IsActive)}
+
         ></Input>
         {IsActive && <FilterDropdown />}
  
@@ -41,17 +49,27 @@ const Filters = () => {
         <Input
           title="Сумма заказа"
           placeholder=""
-          defaultValue="от 5000"
+          //defaultValue="от 5000"
           svgName="filter"
           className="filter__input-area"
+          onChange={(event) => {
+            store.dispatch(
+              actions.productsFilterSetSumFromAcion(event.currentTarget.value)
+            );
+          }}
         ></Input>
 
         <Input
           title=""
           placeholder="₽"
-          defaultValue="до"
+          //defaultValue="до"
           svgName="filter"
           className="filter__input-area"
+          onChange={(event) => {
+            store.dispatch(
+              actions.productsFilterSetSumToAcion(event.currentTarget.value)
+            );
+          }}
         ></Input>
 
         <Button className="button button__big-empty" buttonText="Применить" />

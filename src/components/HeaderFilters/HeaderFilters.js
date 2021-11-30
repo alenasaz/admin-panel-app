@@ -19,7 +19,7 @@ const HeaderFilters = () => {
           svgName="header"
           onChange={(event) => {
             store.dispatch(
-              actions.productsFilterSetDateAcion(event.currentTarget.value)
+              actions.productsFilterSetSumToAcion(event.currentTarget.value)
             );
           }}
           //className="filter__input-area"
@@ -36,6 +36,9 @@ const HeaderFilters = () => {
         <Button
           className="button button__big-empty"
           buttonText="Сбросить фильтры"
+          onClick={() => {
+            store.dispatch(actions.productsFilterClearAction());
+          }}
         />
       </div>
       <div className="filter__loader">

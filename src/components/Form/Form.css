@@ -23,9 +23,10 @@
   flex-direction: column;
   position: fixed;
   right: 0.0625rem;
+  top:0;
   width: 30rem;
   height: 100vh;
-  background-color: var(--background-admin-panel-white);
+  background-color: var( --form-white);
   box-shadow: 0 0 4rem var(--form-shadow-main),
     0 0 1rem var(--form-shadow-medium), 0 0 0.25rem var(--form-shadow-light);
 }
