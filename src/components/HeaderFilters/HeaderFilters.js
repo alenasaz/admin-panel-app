@@ -19,7 +19,7 @@ const HeaderFilters = () => {
           svgName="header"
           onChange={(event) => {
             store.dispatch(
-              actions.productsFilterSetSumToAcion(event.currentTarget.value)
+              actions.productsFilterSetNumFioAcion(event.currentTarget.value)
             );
           }}
           //className="filter__input-area"

@@ -3,7 +3,9 @@ import "./Table.css";
 // import products from "../../data/list";
 import { StatusIcon } from "../Icons/StatusIcon";
 import { connect } from "react-redux";
-import userEvent from "@testing-library/user-event";
+import { store, actions, userColumn } from "../../data";
+import { selectors } from "../../data";
+
 
 const classStatus = {
   Новый: "table__header-item-text",
@@ -12,62 +14,82 @@ const classStatus = {
   Отменен: "table__header-item-text table__header-item-text_grey",
   Отложен: "table__header-item-text",
 };
-//&& info.sum < parseInt(FilterSumTo)  && info.sum > parseInt(FilterSumFrom) 
+//&& info.sum < parseInt(FilterSumTo)  && info.sum > parseInt(FilterSumFrom)
 
-function Table({productsList, FilterDate, FilterSumFrom, FilterSumTo, FilterNumFio }) {
+//info.date.includes(FilterDate) &&  ()&& (info.fullName.includes(FilterNumFio)||info.date.includes(FilterNumFio))
 
-  console.log("redux", FilterDate);
+//&& info.sum<=FilterSumTo
 
-  const DisplayData = productsList.filter((info)=> info.date.includes(FilterDate) &&  info.sum.includes(FilterSumFrom) && info.sum.includes(FilterSumTo) && (info.fullName.includes(FilterNumFio)||info.date.includes(FilterNumFio))).map((info) => {
-    return (
-      <tr className="table__cell-item">
-        <TableCheckbox/>
-        <td>{info.id}</td>
-        <td>{info.date}</td>
-        <td className="table__item">
-        <StatusIcon status={info.status}/>
-          <span className={classStatus[info.status]}>{info.status}</span>
-        </td>
-        <td>{info.position}</td>
-        <td>{info.sum}</td>
-        <td>{info.fullName}</td>
-      </tr>
-    );
-  });
+const { 
+  ID_COL,
+  STATUS_COL,
+  POSITION_COL, 
+  DATE_COL, 
+  SUM_COL, 
+  NAME_COL
+} = userColumn 
+
+const { productsSortAction } = actions
+
+function Table({
+  productsList,
+}) {
+
+  const DisplayData = productsList.map((info) => {
+      return (
+        <tr className="table__cell-item">
+          <TableCheckbox />
+          <td>{info.id}</td>
+          <td>{info.date}</td>
+          <td className="table__item">
+            <StatusIcon status={info.status} />
+            <span className={classStatus[info.status]}>{info.status}</span>
+          </td>
+          <td>{info.position}</td>
+          <td>
+            {" "}
+            {info.sum !== "-"
+              ? Intl.NumberFormat("ru-RU", {
+                  style: "currency",
+                  currency: "RUB",
+                }).format(info.sum)
+              : info.sum}
+          </td>
+          <td>{info.fullName}</td>
+        </tr>
+      );
+    });
   // DisplayData = DisplayData.filter((product)=>product.date.includes(FilterDate))
-  
 
   return (
     <div className="table__body">
       <table className="table">
         <tr className="table__header-item">
           <th>
-            <TableCheckbox/>
+            <TableCheckbox />
           </th>
-          <th>#</th>
-          <th>Дата</th>
-          <th>Статус</th>
-          <th>Позиций</th>
-          <th>Сумма</th>
-          <th>ФИО покупателя</th>
+          <th onClick={() => {store.dispatch(productsSortAction(ID_COL))}}>#</th>
+          <th onClick={() => {store.dispatch(productsSortAction(DATE_COL))}}>Дата</th>
+          <th onClick={() => {store.dispatch(productsSortAction(STATUS_COL))}}>Статус</th>
+          <th onClick={() => {store.dispatch(productsSortAction(POSITION_COL))}}>Позиций</th>
+          <th onClick={() => {store.dispatch(productsSortAction(SUM_COL))}} >Сумма</th>
+          <th onClick={() => {store.dispatch(productsSortAction(NAME_COL))}} >ФИО покупателя</th>
         </tr>
-        
+
         {DisplayData}
       </table>
     </div>
   );
 }
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function (state) {
   return {
-    productsList: state.productListReducer.productsList,
-    FilterDate: state.filterReducer.FilterDate,
-    FilterSumFrom: state.filterReducer.FilterSumFrom,
-    FilterSumTo: state.filterReducer.FilterSumTo,
-    FilterNumFio:state.filterReducer.FilterNumFio,
-  }
-}
+    productsList: selectors.getResultProductsList(state),
+
+  };
+};
+
+
 
 export default connect(mapStateToProps)(Table);
 
-//{}

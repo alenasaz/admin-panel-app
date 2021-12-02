@@ -31,6 +31,11 @@ const Filters = () => {
           classNameDiv=''
           svgName="noicon"
           className="filter__input-area"
+          onChange={(event) => {
+            store.dispatch(
+              actions.productsFilterSetDateToAcion(event.currentTarget.value)
+            );
+          }}
         ></Input>
 
         <Input
