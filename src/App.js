@@ -14,6 +14,7 @@ function App() {
     <Filters/>
     <Table/>
     <Footer/>
+    <Form/>
     </div>
   );
 }

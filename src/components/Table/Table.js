@@ -40,7 +40,8 @@ function Table({
         <tr className="table__cell-item">
           <TableCheckbox />
           <td>{info.id}</td>
-          <td>{info.date}</td>
+          <td onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>{info.fullName}</td>
+          
           <td className="table__item">
             <StatusIcon status={info.status} />
             <span className={classStatus[info.status]}>{info.status}</span>
@@ -55,7 +56,7 @@ function Table({
                 }).format(info.sum)
               : info.sum}
           </td>
-          <td>{info.fullName}</td>
+          <td  >{info.date}</td>
         </tr>
       );
     });
@@ -69,11 +70,12 @@ function Table({
             <TableCheckbox />
           </th>
           <th onClick={() => {store.dispatch(productsSortAction(ID_COL))}}>#</th>
-          <th onClick={() => {store.dispatch(productsSortAction(DATE_COL))}}>Дата</th>
+          <th onClick={() => {store.dispatch(productsSortAction(NAME_COL))}} >ФИО покупателя</th>
+          
           <th onClick={() => {store.dispatch(productsSortAction(STATUS_COL))}}>Статус</th>
           <th onClick={() => {store.dispatch(productsSortAction(POSITION_COL))}}>Позиций</th>
           <th onClick={() => {store.dispatch(productsSortAction(SUM_COL))}} >Сумма</th>
-          <th onClick={() => {store.dispatch(productsSortAction(NAME_COL))}} >ФИО покупателя</th>
+          <th onClick={() => {store.dispatch(productsSortAction(DATE_COL))}}>Дата</th>
         </tr>
 
         {DisplayData}

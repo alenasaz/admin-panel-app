@@ -28,11 +28,14 @@ const Footer = () => {
           onClick={(e)=> {e.preventDefault(); setIsActive(!IsActive)}}
         />
       </form>
-      { IsActive && ( <FooterDropdown /> )
-      }
+
       <FooterPagination></FooterPagination>
     </div>
   );
 };
 
 export default Footer;
+
+
+      // { IsActive && ( <FooterDropdown /> )
+      // }

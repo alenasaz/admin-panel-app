@@ -5,7 +5,10 @@ import { productsFilterSetNumFioAcion } from "./products_filter_set_number_or_fi
 import { productsFilterClearAction } from "./products_filter_clear";
 import { productsFilterSetDateToAcion } from "./products_filter_set_date_to";
 import {productsSortAction} from "./products_sort_id";
-
+import { prooductsItemClickAction } from "./products_item_click";
+import { productsNameEditAction } from "./products_name_edit";
+import { productsStatusEditAction } from "./products_status_edit";
+import { productsFormSaveAction } from "./products_form_save";
 export {
     productsFilterSetDateAcion,
     productsFilterSetDateToAcion,
@@ -13,5 +16,11 @@ export {
     productsFilterSetSumToAcion,
     productsFilterSetNumFioAcion,
     productsFilterClearAction,
-    productsSortAction
+    productsSortAction,
+    prooductsItemClickAction,
+    productsNameEditAction,
+    productsStatusEditAction,
+    productsFormSaveAction
+
+    
 }

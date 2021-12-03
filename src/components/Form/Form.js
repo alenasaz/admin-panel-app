@@ -3,6 +3,8 @@ import ButtonIcon from "../ButtonIcon/ButtonIcon";
 import FormTable from "./FormTable";
 import FormButtonIcon from "./FormButtonIcon";
 import FormInput from "./FormInput";
+import { selectors, actions } from "../../data";
+import { connect } from "react-redux";
 
 const numOrder = 2353474;
 
@@ -19,9 +21,20 @@ const DataOrderList = [
   },
 ];
 
-export const Form = () => {
+export function FormPure(props)  {
+
+  const {
+    status, 
+    fullName,
+    date,
+    isOpenForm,
+    nameChange,
+    statusChange,
+    saveClick,
+  } = props
+
   return (
-    <div className="main">
+    <div className="main" style={{display:isOpenForm ? '':'none'}}>
       <form className="form">
         <div className="header">
           <h1 className="header-text">Заявка #{numOrder}</h1>
@@ -36,7 +49,8 @@ export const Form = () => {
 
         <FormInput
           title="Дата и время заказа"
-          defaultValue="06.12.2021"
+          // defaultValue="06.12.2021"
+          value={date}
           className="input_disabled"
           svgName="lock"
         />
@@ -44,7 +58,9 @@ export const Form = () => {
         <FormInput
           title="ФИО покупателя"
           placeholder="Введите ФИО"
-          defaultValue="Степан"
+          // defaultValue="Степан"
+          value={fullName}
+          onChange={(event) => nameChange(event.currentTarget.value)}
           svgName="lock"
         />
 
@@ -60,8 +76,10 @@ export const Form = () => {
 
         <FormInput
           title="Статус заказа"
-          placeholder="Введите ФИО"
-          defaultValue="Новый"
+          placeholder="Статус заказа"
+          // defaultValue={status}
+          value = {status}
+          onChange={(event) => statusChange(event.currentTarget.value)}
           svgName="lock"
         />
 
@@ -77,13 +95,35 @@ export const Form = () => {
           classNameB="button button__big-colored"
           buttonText="Сохранить"
           svgName="save"
+          type="button"
+          onClick={()=>saveClick({fullName,status,date})}
         >
           {" "}
         </FormButtonIcon>
       </form>
     </div>
   );
-};
+
+}
+const mapStateToProps = (state) => { 
+  return { 
+      fullName: selectors.getfullName(state), 
+      status: selectors.getStatus(state), 
+      date: selectors.getDate(state), 
+      isOpenForm: selectors.getUsersIsOpenEditForm(state),
+
+  } 
+}
+
+const mapDispatchToProps = (dispatch) => { 
+  return { 
+       saveClick: (updatedData) => dispatch(actions.productsFormSaveAction(updatedData)), 
+      // cancelClick: () => dispatch(actions.userListEditFormCancelClickAction()), 
+      nameChange: (fullName) => dispatch(actions.productsNameEditAction(fullName)), 
+      statusChange: (status) => dispatch(actions.productsStatusEditAction(status)), 
+  } 
+}
+export const Form = connect(mapStateToProps, mapDispatchToProps)(FormPure);
 
 // <div className="input">
 // <label className="input_label">

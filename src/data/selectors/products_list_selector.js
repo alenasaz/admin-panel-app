@@ -5,6 +5,10 @@ import {getSortAscending, getSortColumn} from "./sort_selector";
 export function getProductsList(appState) { 
     return appState.productListReducer.productsList; 
 } 
+
+export function getUsersIsOpenEditForm(appState) { 
+  return appState.productListReducer.isOpenEditForm
+}
  
 export function getResultProductsList(appState) {
     const { FilterDate,FilterDateTo, FilterSumFrom,FilterSumTo, FilterNumFio  } = appState.filterReducer;

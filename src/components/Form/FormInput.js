@@ -9,6 +9,7 @@ const FormInput = ({
   defaultValue,
   isDisabled = false,
   svgName,
+  value,
   viewBox = "0 0 16 16",
   fill = "#8055FF",
   stroke = "none",
@@ -27,6 +28,7 @@ const FormInput = ({
         onChange={onChange}
         defaultValue={defaultValue}
         disabled={isDisabled}
+        value={value}
       />
      
     </div>

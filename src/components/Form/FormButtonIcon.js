@@ -5,6 +5,7 @@ const FormButtonIcon = ({
   buttonText,
   svgName,
   onClick,
+  type,
   viewBox = "0 0 16 16",
   fill = "#8055FF",
   stroke = "none",
@@ -13,7 +14,7 @@ const FormButtonIcon = ({
     const { path, circle } = FormButtonIconData[svgName];
     const { className } = FormButtonIconClass[svgName];
   return (
-    <button className={classNameB} onClick={onClick} >
+    <button className={classNameB} onClick={onClick} type={type} >
       <svg
         className={className}
         viewBox={viewBox}
