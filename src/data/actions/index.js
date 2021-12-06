@@ -9,6 +9,7 @@ import { prooductsItemClickAction } from "./products_item_click";
 import { productsNameEditAction } from "./products_name_edit";
 import { productsStatusEditAction } from "./products_status_edit";
 import { productsFormSaveAction } from "./products_form_save";
+import { productsPagingAction } from "./products_paging";
 export {
     productsFilterSetDateAcion,
     productsFilterSetDateToAcion,
@@ -20,7 +21,8 @@ export {
     prooductsItemClickAction,
     productsNameEditAction,
     productsStatusEditAction,
-    productsFormSaveAction
+    productsFormSaveAction,
+    productsPagingAction
 
     
 }

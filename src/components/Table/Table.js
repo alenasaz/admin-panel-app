@@ -39,15 +39,15 @@ function Table({
       return (
         <tr className="table__cell-item">
           <TableCheckbox />
-          <td>{info.id}</td>
+          <td  onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>{info.id}</td>
           <td onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>{info.fullName}</td>
           
-          <td className="table__item">
+          <td className="table__item"  onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>
             <StatusIcon status={info.status} />
             <span className={classStatus[info.status]}>{info.status}</span>
           </td>
-          <td>{info.position}</td>
-          <td>
+          <td  onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>{info.position}</td>
+          <td  onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>
             {" "}
             {info.sum !== "-"
               ? Intl.NumberFormat("ru-RU", {
@@ -56,7 +56,7 @@ function Table({
                 }).format(info.sum)
               : info.sum}
           </td>
-          <td  >{info.date}</td>
+          <td   onClick={()=>store.dispatch(actions.prooductsItemClickAction(info.fullName, info.status, info.date))}>{info.date}</td>
         </tr>
       );
     });
