@@ -1,0 +1,114 @@
+.table__footer-pagination {
+    display: flex;
+  }
+  
+  .table__footer-pagination-form {
+    display: flex;
+    margin-right: 1rem;
+  }
+  
+  .table__pagination-continue {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 1.5rem;
+    margin-right: 0.25rem;
+    font-size: 0.8125rem;
+    color: var(--background-dropdowns-blue);
+  }
+  
+  .table__footer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.625rem;
+    height: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-white);
+    background-color: var(--background-dropdowns-blue);
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .table__footer-button_small {
+    height: 1.5rem;
+    width: 1.5rem;
+  
+    margin-right: 0.25rem;
+  }
+  
+  .table__footer-action {
+    display: flex;
+    align-items: center;
+  }
+  
+  .table__footer-text {
+    display: flex;
+    align-items: center;
+    width: 7.625rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    line-height: 1rem;
+    font-size: 0.8125rem;
+    color: var(--background-dropdowns-blue);
+  }
+  
+  .table__footer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.625rem;
+    height: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-white);
+    background-color: var(--background-dropdowns-blue);
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  .table__footer-button_red {
+    background-color: var(--background-icon-red);
+    width: 5.375rem;
+  }
+  
+  .table__footer-button_small {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.25rem;
+  }
+  
+  .table__footer-button_transparent {
+    background-color: transparent;
+    color: var(--background-dropdowns-blue);
+  }
+  
+  .table__footer-button_small:last-child {
+    margin-left: 10rem;
+  }
+  
+  .table__footer-button-text {
+    display: flex;
+    line-height: 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  .table__footer-icon {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.25rem;
+    stroke: var(--color-white);
+  }
+  
+  .table__footer-button_small:last-child {
+    margin-left: 10rem;
+  }
+  
+  .table__footer-button:last-child {
+    margin: 0;
+  }

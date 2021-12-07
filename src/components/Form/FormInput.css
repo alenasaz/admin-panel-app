@@ -1,0 +1,72 @@
+:root {
+  --form-shadow-main: rgba(0, 0, 0, 0.2);
+  --form-shadow-medium: rgba(0, 0, 0, 0.15);
+  --form-shadow-light: rgba(0, 0, 0, 0.1);
+  --form-white: #fff;
+  --form-dark: #3375b6;
+  --form-red: #f53152;
+  --form-input-light: #bad8f5;
+}
+
+.input_title {
+  display: flex;
+  margin-bottom: 0.5rem;
+  line-height: 1rem;
+  font-size: 0.8125rem;
+  color: black;
+}
+.input_wrapper{
+
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+
+}
+
+.input_field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 2rem;
+  background-color: var(--background-admin-panel-white);
+  border: 0.0625rem solid;
+  border-radius: 0.25rem;
+  border-color: var(--background-dropdowns-blue);
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.button_input {
+  position: relative;
+  display: block;
+  padding: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+.input_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.75rem;
+  height: 0.875rem;
+  fill: #000000;
+}
+
+.input_disabled {
+  background-color: var(--form-input-light);
+  pointer-events: none;
+}
+.input_disabled .input_icon {
+  display: block;
+}
+
+.input_incorrect {
+  border-color: var(--background-icon-red);
+}
+
+.input_incorrect .input_icon {
+  display: block;
+}
