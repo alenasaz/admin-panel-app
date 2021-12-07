@@ -1,7 +1,7 @@
 import { PRODUCTS_PAGING } from '../action_types'
 
 const initState = {
-    currentPage: 2,
+    currentPage: 1,
     size: 5,
 }
 

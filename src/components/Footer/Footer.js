@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="table__footer">
       <form className="table__footer-action">
-        <span className="table__footer-text">Выбрано записей: 5</span>
+        <span className="table__footer-text">Выбрано записей: 3</span>
         <ButtonIcon
           classNameB="table__footer-button"
           buttonText="Изменить статус"

@@ -22,11 +22,25 @@ export function getResultProductsList(appState) {
   let list = getProductsList(appState);
 
   list = list.filter(
-    (info) =>
-      info.sum >= FilterSumFrom &&
-      (info.fullName.includes(FilterNumFio) || info.id.includes(FilterNumFio))
-    /*(new Date(info.date).getDate() >= new Date(FilterDate)
-          Date(info.date) <= Date(FilterDateTo))*/
+    (info) => 
+      (info.sum >= FilterSumFrom &&
+        info.sum <= FilterSumTo) && 
+        (info.fullName.toLowerCase().includes(FilterNumFio.toLowerCase()) || info.id.toString().startsWith(FilterNumFio.toString())) &&
+        (new Date(
+          info.date.split(",")[0].split(".")[2],
+          info.date.split(",")[0].split(".")[1],
+          info.date.split(",")[0].split(".")[0]
+        ) >=
+          new Date(
+            FilterDate.split(".")[2],
+            FilterDate.split(".")[1],
+            FilterDate.split(".")[0]
+          ) )
+        //   &&
+        // (info.fullName.includes(FilterNumFio) ||
+        //   info.id.includes(FilterNumFio))
+    
+    //&& new Date(info.date) <= new Date(FilterDateTo)
   );
 
   const currentPage = getCurrentPage(appState);
@@ -39,6 +53,6 @@ export function getResultProductsList(appState) {
   if (!ascending) {
     newList = newList.reverse();
   }
-
+ 
   return newList;
 }

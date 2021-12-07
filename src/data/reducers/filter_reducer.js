@@ -8,10 +8,10 @@ import {
 } from "../action_types";
 
 const initState = {
-  FilterDate: "",
-  FilterDateTo: "",
-  FilterSumFrom: "",
-  FilterSumTo: "",
+  FilterDate:  '1.0.1960',
+  FilterDateTo: '0.0.9999',
+  FilterSumFrom: 0,
+  FilterSumTo: 99999999999,
   FilterNumFio: "",
 };
 
@@ -20,26 +20,30 @@ export function filterReducer(initialState = initState, action) {
     case PRODUCTS_FILTER_SET_DATE: {
       return {
         ...initialState,
-        FilterDate: action.newFilterDate,
+        FilterDate: (action.newFilterDate !== "") ? action.newFilterDate : '1.0.1960',
+        //FilterDate: action.newFilterDate,
       };
     }
     case PRODUCTS_FILTER_SET_DATE_TO: {
       return {
         ...initialState,
-        FilterDateTo: action.newFilterDateTo,
+        FilterDateTo: (action.newFilterDateTo !== "") ? action.newFilterDateTo : '0.0.9999',
+        //FilterDateTo: action.newFilterDateTo,
       };
     }
     case PRODUCTS_FILTER_SET_SUM_FROM: {
       return {
         ...initialState,
-        FilterSumFrom: action.newFilterSumFrom,
+        FilterSumFrom: (action.newFilterSumFrom !== "") ? action.newFilterSumFrom : 0,
+        //FilterSumFrom: action.newFilterSumFrom,
       };
     }
 
     case PRODUCTS_FILTER_SET_SUM_TO: {
       return {
         ...initialState,
-        FilterSumTo: action.newFilterSumTo,
+        FilterSumTo: (action.newFilterSumTo !== "") ? action.newFilterSumTo : 999999999999,
+        //FilterSumTo: action.newFilterSumTo,
       };
     }
 
@@ -52,9 +56,10 @@ export function filterReducer(initialState = initState, action) {
     case PRODUCTS_FILTER_CLEAR: {
       return {
         ...initialState,
-        FilterDate: "",
-        FilterSumFrom: "",
-        FilterSumTo: "",
+        FilterDate:  '1.0.1960',
+        FilterDateTo: '0.0.9999',
+        FilterSumFrom: 0,
+        FilterSumTo: 99999999999,
         FilterNumFio: "",
       };
     }
